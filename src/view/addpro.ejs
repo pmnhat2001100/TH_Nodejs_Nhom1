@@ -1,0 +1,61 @@
+<!-- Trang thêm sản phẩm -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <form action="/product_insert" method="POST">
+    <div class="form-group">
+      <label for="name">Tên sách</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên sách">
+    </div>
+     <!-- <div class="form-group">
+      <label for="image">Hình ảnh</label>
+      <input type="text" class="form-control" id="image" name="image" placeholder="Nhập hình ảnh">
+
+    </div> -->
+    <div class="form-group">
+      <label for="image">Chọn hình ảnh:</label>
+      <input type="file" class="form-control" id="image" name="image" required>
+    </div>
+    <div class="form-group">
+      <label for="idgroup">Loại: </label>
+      <label for="idgroup">Mùa Xuân</label>
+      <input type="radio" id="idgender" name="idgroup" value="1">
+  
+      <label for="idgroup">Mùa Hạ</label>
+      <input type="radio" id="idgender" name="idgroup" value="2">
+
+      <label for="idgroup">Mùa Thu</label>
+      <input type="radio" id="idgender" name="idgroup" value="3">
+  
+      <label for="idgroup">Mùa Đông</label>
+      <input type="radio" id="idgender" name="idgroup" value="4">
+
+
+    </div>
+   
+    <div class="form-group">
+      <label for="information">Thông tin</label>
+      <input type="text" class="form-control" id="information" name="information" placeholder="Nhập thông tin sách">
+    </div>
+    <div class="form-group">
+      <label for="giagoc">Giá gốc</label>
+      <input type="text" class="form-control" id="giagoc" name="giagoc" placeholder="Nhập giá gốc của sách">
+    </div>
+    <div class="form-group">
+      <label for="giaban">Giá bán</label>
+      <input type="text" class="form-control" id="giaban" name="giaban" placeholder="Nhập giá bán của sách">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</body>
+</html>
+  
+
+<!-- Xong -->

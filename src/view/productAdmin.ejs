@@ -1,0 +1,102 @@
+<!-- Trang danh sách sản phẩm dành cho Amin -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2 a2">
+        <h1></h1>
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href = '/addpro'">Thêm sách</button>
+      </div>
+      <div class="col-10 a3">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">STT</th>
+              <th scope="col">Ten sach</th>
+              <th scope="col">Hinh anh</th>
+              <th scope="col">Loại</th>
+              <th scope="col">Thông tin</th>
+              <th scope="col">Gia goc</th>
+              <th scope="col">Gia ban</th>
+              <th scope="col">Cau hinh</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(let i=0; i<data.rows.length;i++) { %>
+              <tr>
+                <th scope="row">
+                  <%= i + 1 %>
+                </th>
+                <td>
+                  <%= data.rows[i].name %>
+                </td>
+                <td>
+                  <img class="image" src="/img/<%= data.rows[i].image %>" alt="Hình sách" style="max-width: 200px; margin-top: 10px;">
+                </td>
+                <td><%  if (data.rows[i].idgroup === 1) 
+                          { %> Mùa Xuân <% } 
+                        else if (data.rows[i].idgroup === 2) 
+                          { %> Mùa Hạ <% } 
+                        else if (data.rows[i].idgroup === 3) 
+                          { %> Mùa Thu <% }
+                        else if (data.rows[i].idgroup === 4) 
+                          { %> Mùa Đông <% }
+                        else 
+                          { %> Rỗng <% } %>
+                </td>
+                <td>
+                  <%= data.rows[i].information %>
+                </td>
+                <td>
+                  <%= data.rows[i].giagoc %>
+                </td>
+                <td>
+                  <%= data.rows[i].giaban %>
+                </td>
+                <td>
+                  <button class="btn btn-warning">
+                    <a href="/product_edit/<%= data.rows[i].idpro %>"><i class="fas fa-pencil-alt">Sửa</i></a> 
+                 </button>
+                  <button class="btn btn-warning">
+                    <a href="/product_delete/<%= data.rows[i].idpro %>"><i class="fas fa-pencil-alt">Xóa</i></a> 
+                 </button>
+                  
+                </td>
+              </tr>
+            <% }%>
+          </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-end">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+<!-- Xong -->

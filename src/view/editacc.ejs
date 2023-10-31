@@ -1,0 +1,58 @@
+<!-- Update (sửa) tài khoản -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/user_update" method="POST">
+    <div class="form-group">
+      <input type="text" class="form-control" id="idacc" name="idacc" value="<%= data.rows.idacc %>" hidden>
+    </div>
+    <div class="form-group">
+      <label for="name">Tên</label>
+      <input type="text" class="form-control" id="name" name="name" value="<%= data.rows.name %>">
+    </div>
+     <div class="form-group">
+      <label for="account">Tài khoản</label>
+      <input type="text" class="form-control" id="account" name="account" value="<%= data.rows.account %>">
+
+    </div>
+    <div class="form-group">
+      <label for="password">Mật khẩu</label>
+      <input type="password" class="form-control" id="password" name="password" value="<%= data.rows.password %>">
+    </div>
+    <div class="form-group">
+      <label for="idgender">Giới tính</label>
+      <select class="form-control" id="idgender" name="idgender">
+        <option value="1" <% if (data.rows.idgender === 1) { %>selected<% } %>>Nam</option>
+        <option value="2" <% if (data.rows.idgender === 2) { %>selected<% } %>>Nữ</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" value="<%= data.rows.email %>">
+    </div>
+    <div class="form-group">
+      <label for="address">Địa chỉ</label>
+      <input type="text" class="form-control" id="address" name="address" value="<%= data.rows.address %>">
+    </div>
+    <div class="form-group">
+      
+      <label for="idgroup">Quyền</label>
+      <select class="form-control" id="idgroup" name="idgroup">
+        <option value="1" <% if (data.rows.idgroup === 1) { %>selected<% } %>>Admin</option>
+        <option value="2" <% if (data.rows.idgroup === 2) { %>selected<% } %>>User</option>
+      </select>
+      
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</body>
+</html>
+
+<!-- Xong -->
+  

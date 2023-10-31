@@ -1,0 +1,61 @@
+<!-- Update (sửa) sản phẩm -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/product_update" method="POST">
+    <div class="form-group">
+      <input type="text" class="form-control" id="idpro" name="idpro" value="<%= data.rows.idpro %>" hidden>
+    </div>
+    <div class="form-group">
+      <label for="name">Tên sách</label>
+      <input type="text" class="form-control" id="name" name="name" value="<%= data.rows.name %>">
+    </div>
+    <div class="form-group">
+      <label for="image">Hình ảnh hiện tại:</label>
+      <div class="row">
+        <div class="col-md-6">
+          <% if (data.rows.image) { %>
+            <img src="/img/<%= data.rows.image %>" alt="Hình sách hiện tại" style="max-width: 200px; margin-top: 10px;">
+          <% } %>
+        </div>
+        <div class="col-md-6">
+          <label for="image">Chọn hình mới:</label>
+          <input type="file" class="form-control-file" id="image" name="image">
+          <input type="hidden" name="image" value="<%= data.rows.image %>">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="idgroup">Loại</label>
+      <select class="form-control" id="idgroup" name="idgroup">
+        <option value="1" <% if (data.rows.idgroup === 1) { %>selected<% } %>>Mùa xuân</option>
+        <option value="2" <% if (data.rows.idgroup === 2) { %>selected<% } %>>Mùa hạ</option>
+        <option value="3" <% if (data.rows.idgroup === 3) { %>selected<% } %>>Mùa thu</option>
+        <option value="4" <% if (data.rows.idgroup === 4) { %>selected<% } %>>Mùa đông</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="information">Thông tin</label>
+      <input type="text" class="form-control" id="information" name="information" value="<%= data.rows.information %>">
+    </div>
+    <div class="form-group">
+      <label for="giagoc">Gía gốc</label>
+      <input type="text" class="form-control" id="giagoc" name="giagoc" value="<%= data.rows.giagoc %>">
+    </div>
+    <div class="form-group">
+      <label for="giaban">Gía bán</label>
+      <input type="text" class="form-control" id="giaban" name="giaban" value="<%= data.rows.giaban %>">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</body>
+</html>
+
+<!-- Xong -->
+  
